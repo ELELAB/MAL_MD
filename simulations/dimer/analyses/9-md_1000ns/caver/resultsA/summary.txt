@@ -1,0 +1,48 @@
+            ID: Identification of a given tunnel cluster = ranking of a given cluster 
+                based on the Priority.
+            No: Total number of tunnels belonging to a given cluster.
+      No_snaps: Nubmer of snapshots with at least one tunnel 
+                with a radius >= probe_radius (see config.txt).
+        Avg_BR: Average bottleneck radius [A].
+        Max_BR: Maximimum bottleneck radius [A].
+         Avg_L: Average tunnel length [A].
+         Avg_C: Average tunnel curvature.
+      Priority: Tunnel priority calculated by averaging tunnel
+                throughputs over all snapshots (zero value used for 
+                snapshots without tunnel).
+Avg_throughput: Average tunnel throughput.
+   Avg_up_E_BR: Average upper error bound of bottleneck radius estimation.
+   Avg_up_E_TR: Average upper error bound of tunnel profile radii estimation.
+   Max_up_E_BR: Maximal upper errors bound of bottleneck radii estimation.
+   Max_up_E_TR: Maximal upper error bound of tunnel radii estimation.
+            SD: Standard deviation [A].
+All averaged values are calculated over snapshots, where a given cluster has at least one tunnel. The only exception is the Priority, where the average is calculated over all snapshots.
+If there are more tunnels in one snapshot, the cheapest tunnel is chosen. 
+
+
+
+  ID      No   No_snaps   Avg_BR       SD   Max_BR    Avg_L      SD   Avg_C      SD    Priority  Avg_throughput       SD   Avg_up_E_BR      SD   Max_up_E_BR  Avg_up_E_TR   Max_up_E_TR
+   1     952        952    2.433    0.371     3.38   12.664   5.725   1.166   0.120     0.83219         0.87415  0.08083             -       -             -            -             -
+   2     810        810    2.138    0.389     3.21   16.312   4.163   1.296   0.233     0.65057         0.80318  0.08178             -       -             -            -             -
+   3     456        456    1.879    0.326     3.22   23.889   5.133   1.501   0.388     0.31273         0.68581  0.09498             -       -             -            -             -
+   4     158        158    2.068    0.337     2.92   26.079   9.880   1.582   0.398     0.11354         0.71860  0.11377             -       -             -            -             -
+   5      28         28    1.563    0.063     1.74   36.556   3.433   1.842   0.179     0.01304         0.46556  0.03956             -       -             -            -             -
+   6      21         21    1.590    0.179     2.35   33.848  13.062   1.954   0.520     0.01160         0.55241  0.15333             -       -             -            -             -
+   7      17         17    1.724    0.150     2.04   36.157   6.323   1.445   0.196     0.00888         0.52229  0.06575             -       -             -            -             -
+   8      20         20    1.661    0.110     1.84   54.467   9.666   1.802   0.322     0.00825         0.41230  0.07351             -       -             -            -             -
+   9      10         10    1.699    0.130     2.00   29.553  16.854   1.872   0.519     0.00630         0.62968  0.17271             -       -             -            -             -
+  10       6          6    1.545    0.038     1.62   37.374   1.410   1.529   0.069     0.00242         0.40394  0.05141             -       -             -            -             -
+  11       6          6    1.573    0.087     1.76   55.430   3.488   2.381   0.179     0.00220         0.36600  0.03295             -       -             -            -             -
+  12       1          1    2.219    0.000     2.22    2.983   0.000   1.027   0.000     0.00095         0.94633  0.00000             -       -             -            -             -
+
+
+
+-----------------------------------------------------------------------
+ Thank you for using CAVER, please cite:
+
+ Chovancova, E., Pavelka, A., Benes, P., Strnad, O., Brezovsky, J.,
+ Kozlikova, B., Gora, A., Sustr, V., Klvana, M., Medek, P.,
+ Biedermannova, L., Sochor, J. Damborsky, J. (2012) CAVER 3.0: A Tool
+ for the Analysis of Transport Pathways in Dynamic Protein Structures.
+ PLoS Comput Biol 8: e1002708. doi:10.1371/journal.pcbi.1002708
+-----------------------------------------------------------------------

@@ -1,0 +1,491 @@
+Caver computation started.
+Mapping snapshots...
+...finished.
+Settings loaded from:
+configA.txt
+
+Basic parameters:
+starting_point_atom 3689 5074 5482 5896
+probe_radius 2.0
+shell_radius 5.0
+shell_depth 4.0
+frame_weighting_coefficient 1.0
+frame_clustering_threshold 1.0
+
+
+* Processing frame0.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46449
+Voronoi edges: 92792
+Convex hull planes: 210
+Computing cheapest tunnels.
+23 tunnels found in frame0.pdb
+Clustering of 23 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+13 redundant tunnels removed.
+10 tunnels stored.
+
+* Processing frame1.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46452
+Voronoi edges: 92810
+Convex hull planes: 188
+Computing cheapest tunnels.
+0 tunnels found in frame1.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame2.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46446
+Voronoi edges: 92800
+Convex hull planes: 184
+Computing cheapest tunnels.
+0 tunnels found in frame2.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame3.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46386
+Voronoi edges: 92670
+Convex hull planes: 200
+Computing cheapest tunnels.
+12 tunnels found in frame3.pdb
+Clustering of 12 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+7 redundant tunnels removed.
+5 tunnels stored.
+
+* Processing frame4.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46461
+Voronoi edges: 92811
+Convex hull planes: 222
+Computing cheapest tunnels.
+0 tunnels found in frame4.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame5.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46489
+Voronoi edges: 92872
+Convex hull planes: 210
+Computing cheapest tunnels.
+0 tunnels found in frame5.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame6.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46438
+Voronoi edges: 92775
+Convex hull planes: 202
+Computing cheapest tunnels.
+0 tunnels found in frame6.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame7.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46534
+Voronoi edges: 92967
+Convex hull planes: 202
+Computing cheapest tunnels.
+0 tunnels found in frame7.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame8.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46566
+Voronoi edges: 93010
+Convex hull planes: 244
+Computing cheapest tunnels.
+0 tunnels found in frame8.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame9.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46470
+Voronoi edges: 92837
+Convex hull planes: 206
+Computing cheapest tunnels.
+0 tunnels found in frame9.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame10.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46481
+Voronoi edges: 92859
+Convex hull planes: 204
+Computing cheapest tunnels.
+0 tunnels found in frame10.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame11.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46467
+Voronoi edges: 92826
+Convex hull planes: 216
+Computing cheapest tunnels.
+0 tunnels found in frame11.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame12.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46378
+Voronoi edges: 92648
+Convex hull planes: 216
+Computing cheapest tunnels.
+24 tunnels found in frame12.pdb
+Clustering of 24 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+15 redundant tunnels removed.
+9 tunnels stored.
+
+* Processing frame13.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46489
+Voronoi edges: 92871
+Convex hull planes: 212
+Computing cheapest tunnels.
+20 tunnels found in frame13.pdb
+Clustering of 20 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+11 redundant tunnels removed.
+9 tunnels stored.
+
+* Processing frame14.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46372
+Voronoi edges: 92630
+Convex hull planes: 220
+Computing cheapest tunnels.
+40 tunnels found in frame14.pdb
+Clustering of 40 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+30 redundant tunnels removed.
+10 tunnels stored.
+
+* Processing frame15.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46402
+Voronoi edges: 92686
+Convex hull planes: 236
+Computing cheapest tunnels.
+0 tunnels found in frame15.pdb
+Clustering of 0 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+0 redundant tunnels removed.
+0 tunnels stored.
+
+* Processing frame16.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46395
+Voronoi edges: 92679
+Convex hull planes: 222
+Computing cheapest tunnels.
+15 tunnels found in frame16.pdb
+Clustering of 15 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+8 redundant tunnels removed.
+7 tunnels stored.
+
+* Processing frame17.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46392
+Voronoi edges: 92673
+Convex hull planes: 222
+Computing cheapest tunnels.
+27 tunnels found in frame17.pdb
+Clustering of 27 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+17 redundant tunnels removed.
+10 tunnels stored.
+
+* Processing frame18.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46508
+Voronoi edges: 92905
+Convex hull planes: 222
+Computing cheapest tunnels.
+11 tunnels found in frame18.pdb
+Clustering of 11 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+6 redundant tunnels removed.
+5 tunnels stored.
+
+* Processing frame19.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46472
+Voronoi edges: 92839
+Convex hull planes: 210
+Computing cheapest tunnels.
+16 tunnels found in frame19.pdb
+Clustering of 16 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+7 redundant tunnels removed.
+9 tunnels stored.
+
+* Processing frame20.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46419
+Voronoi edges: 92738
+Convex hull planes: 200
+Computing cheapest tunnels.
+14 tunnels found in frame20.pdb
+Clustering of 14 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+7 redundant tunnels removed.
+7 tunnels stored.
+
+* Processing frame21.pdb *
+Residues: 407
+Atoms: 6249
+Constructing additively weighted voronoi diagram for 6249 spheres.
+Triangulating...
+...finished.
+Voronoi vertices: 46374
+Voronoi edges: 92645
+Convex hull planes: 206
+Computing cheapest tunnels.
+26 tunnels found in frame21.pdb
+Clustering of 26 tunnels in a snapshot has started...
+... matrix prepared.
+... clustering finished.
+17 redundant tunnels removed.
+9 tunnels stored.
+
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame0.pdb.obj
+Loaded 10 tunnels for frame0.pdb.
+10 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame1.pdb.obj
+Loaded 0 tunnels for frame1.pdb.
+10 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame2.pdb.obj
+Loaded 0 tunnels for frame2.pdb.
+10 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame3.pdb.obj
+Loaded 5 tunnels for frame3.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame4.pdb.obj
+Loaded 0 tunnels for frame4.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame5.pdb.obj
+Loaded 0 tunnels for frame5.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame6.pdb.obj
+Loaded 0 tunnels for frame6.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame7.pdb.obj
+Loaded 0 tunnels for frame7.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame8.pdb.obj
+Loaded 0 tunnels for frame8.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame9.pdb.obj
+Loaded 0 tunnels for frame9.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame10.pdb.obj
+Loaded 0 tunnels for frame10.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame11.pdb.obj
+Loaded 0 tunnels for frame11.pdb.
+15 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame12.pdb.obj
+Loaded 9 tunnels for frame12.pdb.
+24 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame13.pdb.obj
+Loaded 9 tunnels for frame13.pdb.
+33 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame14.pdb.obj
+Loaded 10 tunnels for frame14.pdb.
+43 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame15.pdb.obj
+Loaded 0 tunnels for frame15.pdb.
+43 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame16.pdb.obj
+Loaded 7 tunnels for frame16.pdb.
+50 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame17.pdb.obj
+Loaded 10 tunnels for frame17.pdb.
+60 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame18.pdb.obj
+Loaded 5 tunnels for frame18.pdb.
+65 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame19.pdb.obj
+Loaded 9 tunnels for frame19.pdb.
+74 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame20.pdb.obj
+Loaded 7 tunnels for frame20.pdb.
+81 tunnels successfully loaded.
+Loading tunnels from /data/user/shared_projects/chalmers/mal/simulations/dimer/analyses/9-md_1000ns/caver_2.0/resultsA/data/tunnels/tunnels_frame21.pdb.obj
+Loaded 9 tunnels for frame21.pdb.
+90 tunnels successfully loaded.
+
+Computing average surface for 90 tunnels.
+Average surface represented by 49 points.
+Computing distance matrix using weighting_coefficient 1.0.
+Performing average link hierarchical of 90 tunnels clustering to create resultsA/data/tree_.txt.
+Total java memory: 1222 MB.
+Will now allocate additionall memory for the clustering matrix of the size at most 812 MB of RAM...
+Maximum allowed cluster-cluster distance matrix size is 20156, in case of memory error in the next computation phase, try to set the parameter murtagh_matrix_size to a lower value in config.txt.
+90 tunnels clustered into 2 clusters using clustering_threshold 7.0.
+
+Leaving only the cheapest tunnel per cluster per snapshot - 22 tunnels kept.
+Statistical analysis of results started.
+Saving summary information.
+Saving profile heat maps.
+Saving bottleneck heat maps.
+Saving tunnel characteristics.
+Saving tunnel-lining residues and atoms.
+Saving bottlenecks.
+Saving tunnel profiles.
+Saving histograms.
+Statistical analysis finished.
+Visualizations started.
+Cluster subsampling for visualization: random.
+Creating multimodel PDB file.
+Visualizations finished.
+Calculation finished with warnings, summary is in resultsA/warnings.txt (size 111).
+
+-----------------------------------------------------------------------
+ Thank you for using CAVER, please cite:
+
+ Chovancova, E., Pavelka, A., Benes, P., Strnad, O., Brezovsky, J.,
+ Kozlikova, B., Gora, A., Sustr, V., Klvana, M., Medek, P.,
+ Biedermannova, L., Sochor, J. Damborsky, J. (2012) CAVER 3.0: A Tool
+ for the Analysis of Transport Pathways in Dynamic Protein Structures.
+ PLoS Comput Biol 8: e1002708. doi:10.1371/journal.pcbi.1002708
+-----------------------------------------------------------------------

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+path_gmx=/usr/local/gromacs-5.1.2_plumed-2.3b/bin/gmx_mpi
+
+
+mkdir gyrate_dimer
+cd gyrate_dimer
+#$path_gmx trjconv -f $xtc.xtc -s $tpr.tpr -pbc mol -ur compact -o traj_centered_prot_MG.xtc -n prot_MG.ndx 
+
+#$path_gmx convert-tpr -s $tpr.tpr -n prot_MG.ndx -o sim_prot_MG.tpr
+
+
+$path_gmx gyrate -f ../traj_centered.xtc -s ../sim.tpr -o gyrate_dimer_MD2_2microsec.xvg <<eof
+1
+eof
+
+cd ..

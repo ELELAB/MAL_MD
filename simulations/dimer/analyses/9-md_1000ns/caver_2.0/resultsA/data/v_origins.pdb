@@ -1,0 +1,66 @@
+MODEL        0
+ATOM      1  H   FIL S   1      86.927 102.798  51.956                          
+ENDMDL
+MODEL        1
+ATOM      2  H   FIL S   1      86.228 102.913  51.439                          
+ENDMDL
+MODEL        2
+ATOM      3  H   FIL S   1      86.150 102.813  51.819                          
+ENDMDL
+MODEL        3
+ATOM      4  H   FIL S   1      86.162 102.627  52.145                          
+ENDMDL
+MODEL        4
+ATOM      5  H   FIL S   1      86.383 102.432  51.322                          
+ENDMDL
+MODEL        5
+ATOM      6  H   FIL S   1      86.160 102.067  51.618                          
+ENDMDL
+MODEL        6
+ATOM      7  H   FIL S   1      86.703 103.054  51.453                          
+ENDMDL
+MODEL        7
+ATOM      8  H   FIL S   1      86.688 103.268  50.522                          
+ENDMDL
+MODEL        8
+ATOM      9  H   FIL S   1      86.212 102.790  51.246                          
+ENDMDL
+MODEL        9
+ATOM     10  H   FIL S   1      85.654 102.824  50.861                          
+ENDMDL
+MODEL        10
+ATOM     11  H   FIL S   1      85.796 102.857  51.433                          
+ENDMDL
+MODEL        11
+ATOM     12  H   FIL S   1      86.495 102.104  51.838                          
+ENDMDL
+MODEL        12
+ATOM     13  H   FIL S   1      85.922 102.489  51.290                          
+ENDMDL
+MODEL        13
+ATOM     14  H   FIL S   1      86.235 102.416  51.551                          
+ENDMDL
+MODEL        14
+ATOM     15  H   FIL S   1      86.573 102.410  51.451                          
+ENDMDL
+MODEL        15
+ATOM     16  H   FIL S   1      87.556 103.789  51.038                          
+ENDMDL
+MODEL        16
+ATOM     17  H   FIL S   1      87.613 102.505  52.793                          
+ENDMDL
+MODEL        17
+ATOM     18  H   FIL S   1      85.849 101.941  51.316                          
+ENDMDL
+MODEL        18
+ATOM     19  H   FIL S   1      86.029 101.871  51.372                          
+ENDMDL
+MODEL        19
+ATOM     20  H   FIL S   1      85.793 102.139  51.316                          
+ENDMDL
+MODEL        20
+ATOM     21  H   FIL S   1      86.918 103.008  51.519                          
+ENDMDL
+MODEL        21
+ATOM     22  H   FIL S   1      87.137 103.274  52.275                          
+ENDMDL

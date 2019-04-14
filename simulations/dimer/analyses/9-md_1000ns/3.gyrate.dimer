@@ -1,0 +1,14 @@
+#!/bin/bash
+
+path_gmx=/usr/local/gromacs-5.1.2_plumed-2.3b/bin/gmx_mpi
+
+
+mkdir gyrate_dimer
+cd gyrate_dimer
+
+
+$path_gmx gyrate -f ../traj_centered.xtc -s ../sim.tpr -o gyrate_dimer_MD1.xvg <<eof
+1
+eof
+
+cd ..

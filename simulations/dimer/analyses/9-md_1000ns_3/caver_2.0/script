@@ -1,0 +1,25 @@
+gmx_mpi make_ndx -f ../sim.tpr -o index.ndx <<eof
+ri 209-384
+ri 1-413 
+ri 623-798
+ri 415-827
+q
+eof
+mkdir pdbA pdbB
+cd pdbA
+gmx_mpi trjconv -f ../../traj_centered.xtc -s ../../sim.tpr -n ../index.ndx -sep -skip 50 -o frame.pdb -fit rot+trans <<eof
+20
+21
+eof
+cd ..
+cd pdbB 
+gmx_mpi trjconv -f ../../traj_centered.xtc -s ../../sim.tpr -n ../index.ndx -sep -skip 50 -o frame.pdb -fit rot+trans <<eof
+22
+23
+eof
+cd ..
+mkdir resultsA
+mkdir resultsB
+java -Xmx1200m -cp ../../../../comparison/caver/caver_3.0.3/caver/lib/ -jar ../../../../comparison/caver/caver_3.0.3/caver/caver.jar -home ../../../../comparison/caver/caver_3.0.3/caver/ -pdb pdbA/ -conf configA.txt -out resultsA/
+
+java -Xmx1200m -cp ../../../../comparison/caver/caver_3.0.3/caver/lib/ -jar ../../../../comparison/caver/caver_3.0.3/caver/caver.jar -home ../../../../comparison/caver/caver_3.0.3/caver/ -pdb pdbB/ -conf configB.txt -out resultsB/

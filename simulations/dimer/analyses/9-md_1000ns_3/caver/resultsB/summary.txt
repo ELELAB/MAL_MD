@@ -1,0 +1,47 @@
+            ID: Identification of a given tunnel cluster = ranking of a given cluster 
+                based on the Priority.
+            No: Total number of tunnels belonging to a given cluster.
+      No_snaps: Nubmer of snapshots with at least one tunnel 
+                with a radius >= probe_radius (see config.txt).
+        Avg_BR: Average bottleneck radius [A].
+        Max_BR: Maximimum bottleneck radius [A].
+         Avg_L: Average tunnel length [A].
+         Avg_C: Average tunnel curvature.
+      Priority: Tunnel priority calculated by averaging tunnel
+                throughputs over all snapshots (zero value used for 
+                snapshots without tunnel).
+Avg_throughput: Average tunnel throughput.
+   Avg_up_E_BR: Average upper error bound of bottleneck radius estimation.
+   Avg_up_E_TR: Average upper error bound of tunnel profile radii estimation.
+   Max_up_E_BR: Maximal upper errors bound of bottleneck radii estimation.
+   Max_up_E_TR: Maximal upper error bound of tunnel radii estimation.
+            SD: Standard deviation [A].
+All averaged values are calculated over snapshots, where a given cluster has at least one tunnel. The only exception is the Priority, where the average is calculated over all snapshots.
+If there are more tunnels in one snapshot, the cheapest tunnel is chosen. 
+
+
+
+  ID      No   No_snaps   Avg_BR       SD   Max_BR    Avg_L      SD   Avg_C      SD    Priority  Avg_throughput       SD   Avg_up_E_BR      SD   Max_up_E_BR  Avg_up_E_TR   Max_up_E_TR
+   1     992        992    2.208    0.266     2.94   13.799   3.045   1.172   0.081     0.84902         0.85586  0.03796             -       -             -            -             -
+   2     985        985    2.186    0.260     2.93   15.721   2.506   1.180   0.078     0.82152         0.83403  0.03747             -       -             -            -             -
+   3     202        202    1.727    0.183     2.30   22.001   6.322   1.446   0.294     0.13590         0.67279  0.07984             -       -             -            -             -
+   4     173        173    1.732    0.212     2.43   38.423   4.079   1.657   0.164     0.09255         0.53498  0.07376             -       -             -            -             -
+   5      51         51    1.640    0.128     2.02   34.146   4.454   1.476   0.123     0.02475         0.48529  0.06285             -       -             -            -             -
+   6      24         24    1.733    0.185     2.10   36.155   6.502   1.679   0.305     0.01332         0.55511  0.07955             -       -             -            -             -
+   7       5          5    1.551    0.035     1.60   33.942   2.693   1.451   0.111     0.00247         0.49436  0.01436             -       -             -            -             -
+   8       4          4    1.534    0.020     1.56   43.890   7.045   2.019   0.782     0.00159         0.39822  0.05466             -       -             -            -             -
+   9       2          2    1.737    0.113     1.85   31.559   2.486   1.368   0.072     0.00108         0.54185  0.05180             -       -             -            -             -
+  10       1          1    1.511    0.000     1.51    4.254   0.000   2.521   0.000     0.00086         0.86433  0.00000             -       -             -            -             -
+  11       1          1    1.619    0.000     1.62   69.449   0.000   2.125   0.000     0.00025         0.24730  0.00000             -       -             -            -             -
+
+
+
+-----------------------------------------------------------------------
+ Thank you for using CAVER, please cite:
+
+ Chovancova, E., Pavelka, A., Benes, P., Strnad, O., Brezovsky, J.,
+ Kozlikova, B., Gora, A., Sustr, V., Klvana, M., Medek, P.,
+ Biedermannova, L., Sochor, J. Damborsky, J. (2012) CAVER 3.0: A Tool
+ for the Analysis of Transport Pathways in Dynamic Protein Structures.
+ PLoS Comput Biol 8: e1002708. doi:10.1371/journal.pcbi.1002708
+-----------------------------------------------------------------------

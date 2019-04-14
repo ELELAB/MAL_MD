@@ -1,0 +1,45 @@
+            ID: Identification of a given tunnel cluster = ranking of a given cluster 
+                based on the Priority.
+            No: Total number of tunnels belonging to a given cluster.
+      No_snaps: Nubmer of snapshots with at least one tunnel 
+                with a radius >= probe_radius (see config.txt).
+        Avg_BR: Average bottleneck radius [A].
+        Max_BR: Maximimum bottleneck radius [A].
+         Avg_L: Average tunnel length [A].
+         Avg_C: Average tunnel curvature.
+      Priority: Tunnel priority calculated by averaging tunnel
+                throughputs over all snapshots (zero value used for 
+                snapshots without tunnel).
+Avg_throughput: Average tunnel throughput.
+   Avg_up_E_BR: Average upper error bound of bottleneck radius estimation.
+   Avg_up_E_TR: Average upper error bound of tunnel profile radii estimation.
+   Max_up_E_BR: Maximal upper errors bound of bottleneck radii estimation.
+   Max_up_E_TR: Maximal upper error bound of tunnel radii estimation.
+            SD: Standard deviation [A].
+All averaged values are calculated over snapshots, where a given cluster has at least one tunnel. The only exception is the Priority, where the average is calculated over all snapshots.
+If there are more tunnels in one snapshot, the cheapest tunnel is chosen. 
+
+
+
+  ID      No   No_snaps   Avg_BR       SD   Max_BR    Avg_L      SD   Avg_C      SD    Priority  Avg_throughput       SD   Avg_up_E_BR      SD   Max_up_E_BR  Avg_up_E_TR   Max_up_E_TR
+   1    1000       1000    2.293    0.291     3.06   10.617   3.708   1.133   0.067     0.90861         0.90861  0.03489             -       -             -            -             -
+   2     623        623    1.943    0.322     2.87   17.171   4.672   1.399   0.218     0.48644         0.78080  0.06089             -       -             -            -             -
+   3     579        579    1.932    0.281     2.87   23.267   4.033   1.492   0.361     0.42120         0.72747  0.06763             -       -             -            -             -
+   4      50         50    1.606    0.105     2.05   36.876   8.071   2.046   0.465     0.02439         0.48776  0.08766             -       -             -            -             -
+   5      43         43    1.634    0.179     2.56   33.040   4.996   1.482   0.192     0.02184         0.50780  0.08073             -       -             -            -             -
+   6       4          4    1.678    0.081     1.79   45.288   2.247   1.837   0.336     0.00201         0.50281  0.03919             -       -             -            -             -
+   7       3          3    1.537    0.029     1.57   36.419   0.331   1.596   0.177     0.00123         0.41011  0.01482             -       -             -            -             -
+   8       1          1    1.810    0.000     1.81    4.122   0.000   1.278   0.000     0.00089         0.88977  0.00000             -       -             -            -             -
+   9       1          1    2.195    0.000     2.19   37.071   0.000   1.501   0.000     0.00066         0.66116  0.00000             -       -             -            -             -
+
+
+
+-----------------------------------------------------------------------
+ Thank you for using CAVER, please cite:
+
+ Chovancova, E., Pavelka, A., Benes, P., Strnad, O., Brezovsky, J.,
+ Kozlikova, B., Gora, A., Sustr, V., Klvana, M., Medek, P.,
+ Biedermannova, L., Sochor, J. Damborsky, J. (2012) CAVER 3.0: A Tool
+ for the Analysis of Transport Pathways in Dynamic Protein Structures.
+ PLoS Comput Biol 8: e1002708. doi:10.1371/journal.pcbi.1002708
+-----------------------------------------------------------------------

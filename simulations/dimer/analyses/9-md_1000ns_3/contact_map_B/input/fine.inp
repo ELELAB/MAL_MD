@@ -1,0 +1,13 @@
+TRAJ ../traj_centered_prot_MG_B.xtc
+COORD ../sim_prot_MG_B.tpr
+NLEVEL 1001
+DT 1000
+TRUNC  1.0
+TRUNC_INTER 0.5
+TRUNC_DR 1.0
+DR_MODE init
+GNUS_PATH /usr/local/conan/gnuplot_inputscripts
+RUN_MDMAT yes
+#DOMAINS domains.txt
+COORD_PDB 9-md_1000ns_3_B.frame0.pdb
+K_TRAJ_CLUSTERS 1-5

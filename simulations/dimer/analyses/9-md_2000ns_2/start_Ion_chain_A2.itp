@@ -1,0 +1,33 @@
+;
+;	File 'start_Ion_chain_A2.itp' was generated
+;	By user: lambru (1004)
+;	On host: kb-bioinfo01
+;	At date: Fri Feb  2 14:21:48 2018
+
+;
+;	This is a include topology file
+;
+;	Created by:
+;	                 :-) GROMACS - gmx pdb2gmx, VERSION 5.1.2 (-:
+;	
+;	Executable:   /usr/local/gromacs-5.1.2_plumed-2.3b/bin/gmx_mpi
+;	Data prefix:  /usr/local/gromacs-5.1.2_plumed-2.3b
+;	Command line:
+;	  gmx_mpi pdb2gmx -f 1kkr_x_fix.B99990148.pdb -o start.gro -p start.top -ignh -his
+;	Force field was read from the standard GROMACS share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Ion_chain_A2        3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 414 MG  rtp MG   q +2.0
+     1         MG    414     MG     MG      1          2     24.305   ; qtot 2
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Ion_chain_A2.itp"
+#endif
+
