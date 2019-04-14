@@ -1,0 +1,64 @@
+Here all the info and procedures to reproduce all the data in Lambrughi et al. 2019
+The repository is composed by four replicates of the CaMAL dimer (monomer A and B) 3 starting from the substrate-bound structure (PDB entry 1KKR) and 1 starting from the substrate-unbound structure (PDB entry 1kk0). Two additional simulations have been performed for the single monomer A and B.
+In the first level of the repository there are the folders with the analysis performed for the simulation of substrate-unbound structure (/1kko_dimer), the three simulations of the substrate-bound structure (/dimer/9-md_1000ns  /dimer/9-md_1000ns_3  /dimer/9-md_MD2_2microsec_done) and for the simulations of the single monomers (/monomer_chainA  /monomer_chainB).   
+Common analysis and comparison between all the simulations are located in the folder /comparison . All the common analysis performed on the 3 replicates of the CaMAL dimer are located under "/dimer/comparison_dimer/"
+
+For each simulation folder, the analysis can be reproduced using the scripts here indicated. The scripts and the output files are located inside each simulation folder, unless otherwise stated.
+
+1. We centered the trajectory (using the Calpha of residue 356 in the 2 chains) and calculate the g-mindist and evaluate the absence of issues with periodic boundary conditions, e.g. for the monomer A of the replicate 1 of the dimer:
+./dimer/analyses/9-md_1000ns/1.g_mindist.sh
+
+2. We created two separate xtc file for each of the monomer (A and B) in the dimer and the relative .tpr files. We calculated a movie of the trajectory in pdb format, e.g. for the monomer A of the replicate 1 of the dimer:
+./dimer/analyses/9-md_1000ns/2.pre_processing.sh
+
+3. For each of the monomer, we calculated the RMSD (mainchain, core and all atoms) after alignment on the residues of the secondary structure elements in the catalytic domain of CaMAL and calculated the radius of gyration (all atoms). We extracted some representative frames from the trajectories, e.g. for the monomer A of the replicate 1 of the dimer:
+./dimer/analyses/9-md_1000ns/3.rmsd_gyrate.sh
+
+3.bis We calculated the radius of gyration for all atoms of the dimer, e.g. for the monomer A of the replicate 1 of the dimer:
+./dimer/analyses/9-md_1000ns/3.gyrate.dimer
+
+4. We calculated the root mean square fluctuations on only Calpha atoms and on all protein atoms for each of the monomer. We performed the calculation using windows of time along the trajectory of 10 ns, e.g. for the monomer A of the replicate 1 of the dimer:
+./dimer/analyses/9-md_1000ns/4.rmsf_10ns_ca.sh
+./dimer/analyses/9-md_1000ns/4.rmsf_10ns.sh
+
+5. We calculated the dihedral angles on both backbone (psi, phi, omega) and side chain (chi) for each monomer. Since the analysis produces a huge quantity of files we removed it. They can be produced with the following script together with the config.cfg and chi_histo_plot.py, e.g. for the monomer A of the replicate 1 of the dimer: 
+./dimer/analyses/9-md_1000ns/5.dihedrals.sh 
+
+6. We calculated the Solvent Accessible Surface Area (SASA) of all the residues involved in the substrate binding pocket for each monomer, e.g. for the monomer A of the replicate 1 of the dimer:  
+./dimer/analyses/9-md_1000ns/6.sas.sh
+
+7. We calculated the secondary structure content for all the protein atom for each monomer in the dimer, e.g. for the monomer A of the replicate 1 of the dimer:  
+./dimer/analyses/9-md_1000ns/7.dssp.sh
+The output of the analysis can be analysed and plotted in R using the following script (e.g. for the monomer A of the replicate 1 of the dimer) to obtain the plots shown in figure 2E
+/comparison_dimer/secondary_structure/dssp_plot_from_gromacs_A1.R
+
+8. We calculated the helical content in the hhl subdomain and b5_a2 loop. Since in the final manuscript we didn't use these analysis and they are not present in the repository. They can be reproduced with the following script, e.g. for the monomer A of the replicate 1 of the dimer: 
+./dimer/analyses/9-md_1000ns/9.helix.sh
+
+9. We calculated the distances between the center of mass of the residue 329 in the substrate binding pocket and two residues in the hhl subdomain and b5_a2 loop of each monomer in the dimer, e.g. for the monomer A of the replicate 1 of the dimer:
+./dimer/analyses/9-md_1000ns/10.distances.sh
+We calculated all the distances between the center of mass of the residue 329 and all the residues in the hhl subdomain and b5_a2 loop of each monomer in the dimer. 
+./comparison_dimer/script_scan_dist_new.sh
+We then joined in a single multicolumn file all the distances values with the solvent accessibility surface area values calculated at the step 6 and processed it in R using the following script (e.g. for the monomer A of the replicate 1 of the dimer) to obtain the correlogram plots (as shown in figure 3C). The same script permits
+/comparison_dimer/script_correlation_distances_A1.R
+
+10. We calculated the PCA on a concatenated trajectory of the MD simulations of both monomeric and dimeric states of CaMAL (isolating each monomer from the dimer first) to compare them in the same essential subspace. We calculated the PCA scan of structural elements on different subset of atoms of CaMAL: i) the whole protein, ii) the β5-α2 loop and iii) the hhl subdomain.
+./comparison/script_PCA.domains.sh 
+With the gnuplot script it's possible to plot the PCA data as in Figure 2 and Figure S2
+./comparison/script_plot1.sh
+
+11. We calculated the extent of the residue-residue correlated motions along the trajectories using as metric the Linear Mutual Information. We measured the LMI correlations matrices as average over time-windows of 10 ns and 100 ns along each replicate of CaMAL dimer(e.g. time-windows of 10 ns for the monomer A and B of the three replicates of the dimer).
+./comparison/correlations/10ns/do_corrA.sh 
+./comparison/correlations/10ns/do_corrB.sh
+We used an R script to plot the LMI correlation data as reported in Figure 3 e.g. for the monomer A of the replicate 1 of the dimer:
+/comparison/correlations/plots/all_correlations_diff.R
+
+12. We used CAVER to perform tunnel search leading to the binding pocket. We thus selected two set of parameters. The first set aimed to monitor the evolution of solvent-accessible tunnels from the protein surface towards the catalytic site, where we used a probe radius of 1.5 Å, comparable to the size of a water molecule (e.g. for the monomer A and B of the replicate 1 of the dimer /dimer/9-md_1000ns/caver/), a shell radius of 5 Å, shell depth of 4 Å, and a clustering threshold of 7 Å. In the second set of parameters, we used the same parameters as the first set but with a probe radius of 2.0 Å to better resemble the size of the natural substrate 3-methylaspartate and evaluate its the accessibility of the catalytic site. All of these parameters are set in the config.txt files in the folders, e.g. for the monomer A of the replicate 1 of the dimer:
+./dimer/analyses/9-md_1000ns/caver/script
+./dimer/analyses/9-md_1000ns/caver_2.0/script
+
+13. We performed analysis of the contacts and proximity between residues in the structure of CaMAL and estimate breaking and forming events, using the CONtact ANalysis (CONAN) software. All the parameters used for the calculation are contained in the fine.inp file e.g. for the monomer A of the replicate 1 of the dimer:
+dimer/analyses/9-md_1000ns/contact_map_A/conan.py fine.inp 
+
+
+The templates mdp files for preparation of md are in the pre_md folder with one of the protein as an example

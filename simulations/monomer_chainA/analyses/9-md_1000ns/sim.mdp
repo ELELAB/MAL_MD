@@ -1,0 +1,76 @@
+define                   = 
+
+integrator               = md
+tinit                    = 0
+dt                       = 0.002   #tot 1000000 ps
+nsteps                   = 500000000
+nstcomm                  = 1
+
+nstxout                  = 500000
+nstvout                  = 500000
+nstfout                  = 0
+nstlog                   = 500000
+nstenergy                = 500000
+nstxtcout                = 10000
+xtc-precision            = 10000
+xtc_grps                 = Protein Non-Protein
+##### Energy monitoring #####
+energygrps               = Protein  Non-Protein
+cutoff-scheme            = verlet
+verlet-buffer-drift      = 0.005
+nstlist                  = 32 
+ns_type                  = grid
+pbc                      = xyz
+periodic_molecules        = no
+epsilon_r                = 1
+epsilon_rf               = 1
+
+rlist                    = 1.1 
+rlistlong                = -1
+coulombtype              = pme
+
+rcoulomb                 = 0.9
+rvdw                     = 0.9
+vdwtype			 = cut-off
+fourierspacing           = 0.12
+pme_order                = 4
+ewald_rtol               = 1e-05
+ewald_geometry           = 3d
+epsilon_surface          = 0
+optimize_fft             = yes
+
+
+##### Bussi temperature coupling is on in two groups #####
+tcoupl                   =  v-rescale
+tc-grps                  = protein  non-protein
+tau_t                    = 0.006       0.006
+ref_t                    = 298 298
+
+##### Generate velocites #####
+gen_vel                  = no 
+gen_temp                 = 298
+gen_seed                 = -1
+
+ OPTIONS FOR BONDS
+constraints              = all-bonds
+; Type of constraint algorithm
+constraint-algorithm     = Lincs
+; Do not constrain the start configuration
+continuation             = no
+; Use successive overrelaxation to reduce the number of shake iterations
+Shake-SOR                = no
+; Relative tolerance of shake
+shake-tol                = 0.0001
+; Highest order in the expansion of the constraint coupling matrix
+lincs-order              = 4
+; Number of iterations in the final step of LINCS. 1 is fine for
+; normal simulations, but use 2 to conserve energy in NVE runs.
+; For energy minimization with constraints it should be 4 to 8.
+lincs-iter               = 4
+; Lincs will write a warning to the stderr if in one step a bond
+; rotates over more degrees than
+lincs-warnangle          = 30
+; Convert harmonic bonds to morse potentials
+morse                    = no
+
+

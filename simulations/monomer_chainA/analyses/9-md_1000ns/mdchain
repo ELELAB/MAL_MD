@@ -1,0 +1,23 @@
+#!/bin/bash
+
+args=("$@")
+if [[ ${#args[@]} -eq 2 ]]; then
+   echo "New chain. Queueing $1 for $2 runs"
+   jid=$(qsub $1)
+   echo "Starting JID: $jid"
+   runs=$(seq 1 $(($2-1)))
+elif [[ ${#args[@]} -eq 3 ]]; then
+   echo "Appending to old queue from JID $3"
+   jid=$3
+   runs=$(seq 1 $2)
+else
+   echo "Wrong number of arguments. Exiting..."
+   exit
+fi
+
+for i in $runs; do
+    echo "Cycle $i : will wait for JID $jid"
+    jid=$(qsub -W depend=afterany:$jid $1)
+    echo "New JID is: $jid"
+done
+

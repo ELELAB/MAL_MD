@@ -1,0 +1,31 @@
+;
+;	File 'topol_Other_chain_B.itp' was generated
+;	By user: veronica (1024)
+;	On host: kb-bioinfo01
+;	At date: Thu Dec 15 15:03:03 2016
+;
+;	This is a include topology file
+;
+;	It was generated using program:
+;	pdb2gmx - VERSION 4.6.5
+;
+;	Command line was:
+;	pdb2gmx -f 1kkr_m_fix.modified82nosubs.pdb -his 
+;
+;	Force field was read from the standard Gromacs share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Other_chain_B       3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 501 MG  rtp MG   q +2.0
+     1         MG    501     MG     MG      1          2     24.305   ; qtot 2
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Other_chain_B.itp"
+#endif
+

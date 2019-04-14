@@ -1,0 +1,29 @@
+
+gmx=/usr/local/gromacs-5.1.2_plumed-2.3b/bin/gmx_mpi
+
+
+mkdir 1-box
+cd 1-box
+
+cp ../0-start/start.top .
+cp ../0-start/start.gro .
+cp ../0-start/*.itp .
+
+gmx editconf -f start.gro -bt dodecahedron -d 2.0 -c -o start.gro
+rm \#*
+cd ..
+
+
+mkdir 2-solvate
+cd 2-solvate
+
+cp ../1-box/start.top .
+cp ../1-box/start.gro .
+cp ../1-box/*.itp .
+
+gmx solvate -cp start.gro -cs spc216.gro -o start.gro -p start.top
+rm \#*
+
+cd ..
+
+#This created 47566  atoms of water. (In comparison, 1kkr dimer had ~35 000 water atoms)
