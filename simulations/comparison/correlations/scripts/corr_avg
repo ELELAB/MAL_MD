@@ -1,0 +1,112 @@
+#!/usr/bin/python
+#  File: corr_avg
+#
+#  Copyright (C) 2012 Matteo Tiberti <matteo.tiberti@gmail.com>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+
+
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Dec  1 12:21:30 2011
+
+@author: teo
+"""
+
+import re
+import numpy as np
+import sys
+import numpy as np
+import sys
+
+def write_matrix(m,fname):
+    fh = open(fname, 'w')
+    for i in range(m.shape[0]):
+        for j in range(m.shape[0]):
+            fh.write("%1.2f\t" % m[i,j])
+        fh.write("\n")
+    fh.close()
+
+def parse_corr(fname):
+    try:
+        fh = open(fname,'r')
+    except:
+        print "ERROR: File not readable. Exiting ..."
+        exit()
+
+    lines = fh.readlines()
+    sys.stderr.write("Done! File contains %d lines. Please be patient.\n" % len(lines))
+
+    k=0
+    l=0
+    poppanda = []
+    for i in range(len(lines)):
+        if not lines[i].startswith(' '):
+            poppanda.append(lines[i])
+    for i in poppanda:
+        lines.remove(i)
+    linesn = len(lines)
+
+    sys.stderr.write("Matrix has %d elements (%d x %d).\n" % ( linesn, int(np.sqrt(linesn)), int(np.sqrt(linesn)) ) ) 
+
+
+    eln = int(np.sqrt(linesn))
+    m = np.zeros((eln,eln),dtype=np.float)
+    resdef = []
+
+    for i in range(len(lines)):
+        tmp = lines[i].strip().split()
+        m[int(tmp[0])-1,int(tmp[1])-1] = float(tmp[4])
+        if tmp[3] not in resdef:
+            resdef.append(tmp[3])
+        sys.stderr.write("\rParsing ... %3.1f%%"% (float(float(i)*100.0/float(len(lines)))))
+        sys.stderr.flush()
+    sys.stderr.write(" Done!\n")
+
+    return (m,resdef)
+                
+def parse_dat(fname):
+    fh = open(fname,'r')
+    lines = fh.readlines()
+    m = np.zeros((len(lines),len(lines)))
+    for i in range(len(lines)):
+        tmp = lines[i].strip().split()
+        for j in range(len(tmp)):
+            m[i,j] = float(tmp[j])
+    return m
+
+def dat2wordom(m,reslist):
+    wordom = []
+    for i in range(np.shape(m)[0]):
+        for j in range(np.shape(m)[0]):
+            wordom.append([i+1,j+1,reslist[i],reslist[j],m[i,j]])
+    return wordom
+
+def write_corr(wordom, outfile):
+#        5       3135           :C10:CA           :D99:CA   -0.71
+#        5       3147           :C10:CA          :S100:CA   -0.65    
+    #outfileh = open(outfile,'w')
+    sys.stdout.write("# THIS IS A FAKE WORDOM FILE. Graciously generated as the mean of several .dat matrix. Hell YEAH!\n")
+    for i in wordom:
+        c1=str(i[0]).rjust(9)
+        c2=str(i[1]).rjust(11)
+        c3=str(i[2]).rjust(18)
+        c4=str(i[3]).rjust(18)
+        c5=str("%1.2f"%i[4]).rjust(8)
+        sys.stdout.write("%s%s%s%s%s\n" % (c1,c2,c3,c4,c5) )
+    #outfileh.close()
+
+outfile = sys.stdout
+
+matrices = []
+cum_matrix = 0
+for i in sys.argv[1:]:
+    (mat,resl) = parse_corr(i)
+    cum_matrix += mat
+avg_matrix = cum_matrix / float(len(sys.argv[1:]))
+corrdata = dat2wordom(avg_matrix,resl)
+write_corr(corrdata, outfile)
+

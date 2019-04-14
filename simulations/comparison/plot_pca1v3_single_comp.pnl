@@ -1,0 +1,52 @@
+set terminal postscript eps enhanced color font 'Helvetica,11'
+set style line 1 lt 1 lw 3 lc rgb "#000000"
+set style line 2 lt 1 lw 3 lc rgb "#e69f00"
+set style line 3 lt 1 lw 3 lc rgb "#56b4e9"
+set style line 4 lt 1 lw 3  lc rgb "#009e73"
+set style line 5 lt 1 lw 3  lc rgb "#f0e442"
+set style line 6 lt 1 lw 3  lc rgb "#0072b2"
+set style line 7 lt 1 lw 3 lc rgb "#d55e00"
+set style line 8 lt 1 lw 3 lc rgb "#808080"
+set style line 9 lt 1 lw 3 lc rgb "#875692"
+set style line 10 lt 1 lw 3 lc rgb "#0000ff"
+set style line 11 lt 1 lw 3 lc rgb "#00008b"
+set style line 12 lt 1 lw 3 lc rgb "#191970"
+set style line 13 lt 1 lw 3 lc rgb "#00008b"
+set style line 14 lt 1 lw 3 lc rgb "#c080ff"
+set style line 15 lt 1 lw 3 lc rgb "#c000ff"
+set style line 16 lt 1 lw 3 lc rgb "#d0d5d8"
+#set key outside t r
+set output 'PCA1v3.singles_time.evo.eps'
+
+set multiplot layout 4,2
+
+set palette defined ( 1 "#5d4000", 50000  "#e69f00" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every ::1::50000 u 2:3:($1/1000) w p ls 2 lc palette z t 'monomer A'
+
+set palette defined ( 50001 "#0c3f5b", 100000 "#56b4e9" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every ::50001::100000 u 2:3:($1/1000) w p ls 3 lc palette z t 'monomer B' 
+
+set palette defined ( 100001 "#003c2c", 150000 "#009e73" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every ::100001::150000 u 2:3:($1/1000)  w p ls 4 lc palette z t 'dimer A 1'
+
+set palette defined ( 150001 "#544e07", 200000 "#f0e442" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every ::150001::200000 u 2:3:($1/1000) w p ls 5 lc palette z t 'dimer B 1'
+
+set palette defined ( 200001 "#001a29", 250000 "#0072b2" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every ::200001::250000 u 2:3:($1/1000) w p ls 6 lc palette z t 'dimer A 2'
+
+set palette defined ( 250001 "#4c2100", 300000  "#d55e00" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every ::250001::300000 u 2:3:($1/1000) w p ls 7 lc palette z t 'dimer B 2'
+
+set palette defined ( 300001 "#141414", 350000 "#808080" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every  ::300001::350000 u 2:3:($1/1000) w p ls 8 lc palette z t 'dimer A 3'
+
+set palette defined ( 350001 "#2c1c2f", 400000 "#875692" )
+plot 'proj2d_1vs3_mt.xvg'  u 2:3 w p ls 16 t 'rest', 'proj2d_1vs3_mt.xvg' every ::350001::400000 u 2:3:($1/1000) w p ls 9 lc palette z t 'dimer B 3'
+
+set xlabel "PC 1"
+set ylabel "PC 3"
+#set xrange [-4:4]
+#set yrange [3.6:4.2]
+#replot
+unset multiplot

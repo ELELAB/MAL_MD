@@ -1,0 +1,93 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+#  File: corr2dat
+#
+#  Copyright (C) 2012 Matteo Tiberti <matteo.tiberti@gmail.com>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+
+"""
+Created on Thu Dec  1 12:21:30 2011
+
+@author: teo
+"""
+
+import re
+import numpy as np
+import sys
+from optparse import OptionParser
+import numpy as np
+import sys
+
+
+parser = OptionParser()
+
+parser.add_option("-c","--corrfile",help="Input wordom correlation file file",dest="corr")
+parser.add_option("-o","--outfile",help="Output dat file; if not specified, input file basename will be used",dest="outfile",default=None)
+
+(options,args) = parser.parse_args()
+
+if options.corr == None:
+    print "ERROR: wordom correlations file must be provided"
+    exit(3)
+fname = options.corr
+        
+if options.outfile == None:
+    outfile = ".".join(options.corr.split(".")[0:-1])
+    if not outfile:
+        outfile = options.corr+".dat"
+    else:
+        outfile += ".dat"
+else:
+    outfile = options.outfile
+                
+
+
+def write_matrix(m,fname):
+    fh = open(fname, 'w')
+    for i in range(m.shape[0]):
+        for j in range(m.shape[0]):
+            fh.write("%1.2f\t" % m[i,j])
+        fh.write("\n")
+    fh.close()
+
+print "Loading ...",
+try:
+    fh = open(fname,'r')
+except:
+    print "ERROR: File not readable. Exiting ..."
+    exit()
+
+lines = fh.readlines()
+print " Done! File contains %d lines. Please be patient." % len(lines)
+
+k=0
+l=0
+parstring = "Intro"
+poppanda = []
+for i in range(len(lines)):
+    if not lines[i].startswith(' '):
+        poppanda.append(lines[i])
+for i in poppanda:
+    lines.remove(i)
+linesn = len(lines)
+
+print "Matrix has %d elements (%d x %d)." % ( linesn, int(np.sqrt(linesn)), int(np.sqrt(linesn)) ) 
+
+
+eln = int(np.sqrt(linesn))
+m = np.zeros((eln,eln),dtype=np.float)
+
+for i in range(len(lines)):
+    tmp = lines[i].strip().split()
+    m[int(tmp[0])-1,int(tmp[1])-1] = float(tmp[4])
+    sys.stdout.write("\rParsing ... %3.1f%%"% (float(float(i)*100.0/float(len(lines)))))
+    sys.stdout.flush()
+sys.stdout.write(" Done!\n")
+
+write_matrix(m,outfile)
+

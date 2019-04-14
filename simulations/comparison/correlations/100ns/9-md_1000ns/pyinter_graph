@@ -1,0 +1,21 @@
+#!/bin/bash
+#xtc="../traj_filt.under_0.65_to.closed.conf.xtc"
+#gro="sim.gro" or "model0.pdb" from the trajectory
+#pdb=Protein Data Bank file - only if there are numeration issues
+gro="average0.pdb"
+pdb="average0.pdb"
+
+
+
+#pyinteraph -s $gro -t $xtc -r $pdb -b --sb-graph sb-graph.dat --ff-masses charmm27
+#write hubs
+filter_graph -d corr-average.dat -o corr-average_filt.dat -t 0.5
+graph_analysis -a corr-average_filt.dat -r $pdb -u -ub hubs_sb.pdb
+graph_analysis -a corr-average_filt.dat -r $pdb -c -cb con_comp_sb.pdb
+
+
+
+
+filter_graph -d corr-average.dat -c clusters_sizes_corr.dat -p clusters_plot_corr.pdf
+
+

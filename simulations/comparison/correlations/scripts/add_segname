@@ -1,0 +1,87 @@
+#!/usr/bin/python
+#  File: add_segname
+#
+#  Copyright (C) 2012 Matteo Tiberti <matteo.tiberti@gmail.com>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+
+
+import sys
+from optparse import OptionParser
+
+parser = OptionParser()
+parser.add_option("-n","--segname",help="Specified segname (max 4 characters)",dest="segname")
+parser.add_option("-p","--pdb",help="Input pdb file",dest="infile")
+parser.add_option("-o","--outfile",help="Output pdb file; if not specified, input file will be rewritten",dest="outfile",default=None)
+parser.add_option("-r","--reference",help="Use reference pdb's chains to add segment names. option -n will be ignored.",dest="ref")
+
+(options,args) = parser.parse_args()
+
+def get_ref_chains(pdb):
+    fh = open(pdb,'r')
+    chains = []
+    for line in fh:
+        if line.startswith('ATOM') and line[12:16].strip() == 'CA':
+            chains.append(line[21])
+    fh.close()
+    return chains
+
+if not options.infile:
+    print "ERROR: input file must be provided."
+    exit(3)
+if not options.segname and not options.ref:
+    print "ERROR: neither a segname nor a reference pdb have been provided."
+    exit(1)
+elif options.segname and (len(options.segname) > 4 or len(options.segname) < 1):
+    print "ERROR: segname must be 1 to 4 characters long."
+    exit(2)
+elif options.ref and options.segname:
+    print "WARNING: option -r is used; -n will be ignored."
+
+segname = options.segname
+fname = options.infile
+ref = options.ref
+
+
+out = []
+fh = open(fname,'r')
+
+k=None
+i=0
+
+if not options.ref:
+    for line in fh:
+        if line.startswith('ATOM'):
+            tmp = list(line.strip())
+            tmp[72:76] = segname.rjust(4)
+            out.append("".join(tmp)+"\n")
+else:
+    chains = get_ref_chains(options.ref)
+    i = 0
+    for line in fh:
+        if line.startswith('ATOM'):
+            tmp = list(line.strip())
+            #print tmp
+            tmp.extend(["" for i in range(1,100)])
+            #print tmp
+            #print len(tmp
+            tmp[72:76] = chains[i].rjust(4)
+            i+=1
+            out.append("".join(tmp)+"\n")
+
+fh.close() 
+       
+if options.outfile:
+    fhout = open(options.outfile,'w')
+else:
+    fhout = open(fname,'w')
+for line in out:
+    fhout.write(line)
+fhout.close()
+    
+
+                
+            
