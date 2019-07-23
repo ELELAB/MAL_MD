@@ -1,0 +1,20 @@
+Covariance analysis log, written Tue Jun 25 11:52:16 2019
+
+Program: covar
+Working directory: /data/user/shared_projects/chalmers/mal/simulations/comparison/PCA_domains_last_long_1kko/PCA_Prot_1
+
+Read 600001 frames from /data/user/shared_projects/chalmers/mal/simulations/comparison//traj_monA_monB_dim1A_dim1B_dim2A_dim2B_dim3A_dim3B_1kko1A_1kko1B.xtc (time 0 to 1.2e+07 ps)
+Read reference structure for fit from /data/user/shared_projects/chalmers/mal/simulations/comparison//sim_prot_MG_A.tpr
+Read index groups from /data/user/shared_projects/chalmers/mal/simulations/comparison//index_domains.ndx
+
+Analysis group is 'Protein' (6364 atoms)
+Fit group is 'r_177-187_r_209-225_r_235-238_r_251-265_r_270-273_r_281-297_r_303-306_r_313-322_r_327-330_r_338-351_r_355-357_r_365-378_r_382-384' (2009 atoms)
+Analysis is mass weighted
+Fit is mass weighted
+Diagonalized the 19092x19092 covariance matrix
+Trace of the covariance matrix before diagonalizing: 4011.59
+Trace of the covariance matrix after diagonalizing: 4011.58
+
+Wrote 19092 eigenvalues to eigenval.xvg
+Wrote average structure to average.pdb and eigenvec.trr
+Wrote eigenvectors 1 to 19092 to eigenvec.trr

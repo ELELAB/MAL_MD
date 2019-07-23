@@ -1,9 +1,21 @@
-Here all the info and procedures to reproduce all the data in Lambrughi et al. 2019
+Here all the info and description of the  procedures to reproduce all the data in Lambrughi et al. 2019.
+Here are all the links to publicly available repositories containing the results described in the manuscript and the associated files, along with their detailed description.
+
+We carried out all-atom Molecular Dynamics simulations and analysis of the results with Gromacs version 5.1.2. It can be freely obtained at: http://manual.gromacs.org/documentation/ 
+We carried out several analysis using in-house R scripts using RStudio version 1.0.143 and R version 3.5.1, they can be freely obtained at: https://www.rstudio.com/products/rstudio/download/ https://www.r-project.org/
+We analysed the data using WORDOM using the package version 0.22. It can be freely obtained at: https://sourceforge.net/projects/wordom/
+We performed analysis using CAVER Analyst 1.0 and the standalone version of CAVER 3.02 software. They can be freely obtained at: https://www.caver.cz/
+We carried out analysis using CONtact ANalysis (CONAN) software version . It can be freely obtained at: https://hits-mbm.github.io/conan/
+We conducted network analysis using the Cytoscape package version . It can be freely obtained at: https://cytoscape.org/
+We performed some plots using MATLAB scripts. It can be obtained at: https://se.mathworks.com/products/matlab.html Analogous plots can be obtained also with other publicly available software.  
+
+The R and bash scripts, input files for the simulations, input and output files from the modeling step, along with the results generated from simulations are freely available in a GitHub repository associated to our publication https://github.com/ELELAB/MAL_MD
+
 The repository is composed by four replicates of the CaMAL dimer (monomer A and B) 3 starting from the substrate-bound structure (PDB entry 1KKR) and 1 starting from the substrate-unbound structure (PDB entry 1kk0). Two additional simulations have been performed for the single monomer A and B.
 In the first level of the repository there are the folders with the analysis performed for the simulation of substrate-unbound structure (/1kko_dimer), the three simulations of the substrate-bound structure (/dimer/9-md_1000ns  /dimer/9-md_1000ns_3  /dimer/9-md_MD2_2microsec_done) and for the simulations of the single monomers (/monomer_chainA  /monomer_chainB).   
 Common analysis and comparison between all the simulations are located in the folder /comparison . All the common analysis performed on the 3 replicates of the CaMAL dimer are located under "/dimer/comparison_dimer/"
 
-For each simulation folder, the analysis can be reproduced using the scripts here indicated. The scripts and the output files are located inside each simulation folder, unless otherwise stated.
+For each simulation folder, the analysis can be reproduced using the scripts here indicated. The scripts and the output files are located inside each simulation folder, unless otherwise stated. All the results can be reproduced using the provided scripts in bash shell and by publicly available software as GROMACS, R, CAVER, CONAN, WORDOM or software as MATLAB. 
 
 1. We centered the trajectory (using the Calpha of residue 356 in the 2 chains) and calculate the g-mindist and evaluate the absence of issues with periodic boundary conditions, e.g. for the monomer A of the replicate 1 of the dimer:
 ./dimer/analyses/9-md_1000ns/1.g_mindist.sh
@@ -60,5 +72,6 @@ We used an R script to plot the LMI correlation data as reported in Figure 3 e.g
 13. We performed analysis of the contacts and proximity between residues in the structure of CaMAL and estimate breaking and forming events, using the CONtact ANalysis (CONAN) software. All the parameters used for the calculation are contained in the fine.inp file e.g. for the monomer A of the replicate 1 of the dimer:
 dimer/analyses/9-md_1000ns/contact_map_A/conan.py fine.inp 
 
+14 We performed analysis of the contacts between the monomers in the CaMAL dimer and study its asimmetry using the CONtact ANalysis (CONAN) software. The results and all the parameters for calculations are in the script.sh and fine.inp file e.g.  ./1kko_dimer/analysis/9-md_1000ns/contact_map/script.sh 
 
 The templates mdp files for preparation of md are in the pre_md folder with one of the protein as an example

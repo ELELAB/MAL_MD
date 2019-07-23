@@ -1,0 +1,31 @@
+set terminal postscript eps enhanced color font 'Helvetica,11'
+set style line 1 lt 1 lw 3 lc rgb "#000000"
+set style line 2 lt 1 lw 3 lc rgb "#36a506"
+set style line 3 lt 1 lw 3 lc rgb "#56b4e9"
+set style line 4 lt 1 lw 3  lc rgb "#009e73"
+set style line 5 lt 1 lw 3  lc rgb "#f0e442"
+set style line 6 lt 1 lw 3  lc rgb "#0072b2"
+set style line 7 lt 1 lw 3 lc rgb "#d55e00"
+set style line 8 lt 1 lw 3 lc rgb "#cc79a7"
+set style line 9 lt 1 lw 3 lc rgb "blue"
+set style line 10 lt 1 lw 3 lc rgb "#0000ff"
+set style line 11 lt 1 lw 3 lc rgb "#00008b"
+set style line 12 lt 1 lw 3 lc rgb "#191970"
+set style line 13 lt 1 lw 3 lc rgb "#00008b"
+set style line 14 lt 1 lw 3 lc rgb "#c080ff"
+set style line 15 lt 1 lw 3 lc rgb "#c000ff"
+set style line 16 lt 1 lw 3 lc rgb "#ff00ff"
+set key outside t r
+
+
+plot  'proj2d_1vs3.xvg' u 1:2 ls 2  with points 
+
+#set xrange [-4:4]
+#set yrange [3.6:4.2]
+replot
+set output 'proj2d_1vs3.ps'
+set xlabel "PC.1 (nm)"
+set ylabel "PC.3 (nm)"
+replot
+
+
