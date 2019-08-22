@@ -8,7 +8,8 @@ bioRxiv, doi: https://doi.org/10.1101/583088
 corresponding author: Elena Papaleo, elenap@cancer.dk
 
 The repository contains the input data for modeling and simulations, outputs from analyses and associated scripts to reproduce our data.
-The entire MD trajectories are available upon request due to space limitation.
+The  MD trajectories have been deposited in OSF due to space limitation.
+They can be downloaded from here: https://osf.io/c5mhj/
  
 A more detailed README file is in the subfolder simulations
 
