@@ -3,7 +3,7 @@ Computational Biology Laboratory, Danish Cancer Society Research Center, Strandb
 Repository associated to the publication:
 
 Conformational gating in ammonia lyases, Matteo Lambrughi, Zeljka Sanader Maršić, Veronica Saez-Jimenez, Valeria Mapelli, Lisbeth Olsson, Elena Papaleo
-bioRxiv, doi: https://doi.org/10.1101/583088
+Biochim Biophys Acta Gen Subj. 2020,  doi: 10.1016/j.bbagen.2020.129605
 
 corresponding author: Elena Papaleo, elenap@cancer.dk
 
